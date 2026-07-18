@@ -11,7 +11,7 @@ public:
               if(first[i] == last[i]) {
                 s += first[i];
               }
-             else return s;
+             else break;
          }
         return s;
     }
