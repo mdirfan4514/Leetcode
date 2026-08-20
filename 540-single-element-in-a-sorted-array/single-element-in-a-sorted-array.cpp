@@ -1,7 +1,7 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        int n = nums.size()-1;
+        int n = nums.size();
         int lo = 0;
         int hi = n-1;
         while(lo<hi){
