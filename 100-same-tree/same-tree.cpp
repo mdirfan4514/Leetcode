@@ -7,9 +7,9 @@ public:
 
         if(p->val != q->val) return false;
         bool LST = isSameTree(p->left, q->left);
-        if(LST != true) return false;
+        if(LST == false) return false;
         bool RST = isSameTree(p->right, q->right);
-        if(RST != true) return false;
+        if(RST == false) return false;
         return true;
     }
 };
