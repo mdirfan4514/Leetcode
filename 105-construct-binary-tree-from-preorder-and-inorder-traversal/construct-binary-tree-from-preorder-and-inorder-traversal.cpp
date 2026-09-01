@@ -11,7 +11,7 @@ public:
         }
         int leftCount = i - inlo;
         int rightCount = inhi - i;
-        root->left = build(pre, prelo+1, prelo+leftCount, in, inlo, i-inlo);
+        root->left = build(pre, prelo+1, prelo+leftCount, in, inlo, i-1);
         root->right = build(pre, prelo+leftCount+1, prehi, in, i+1, inhi);
         return root;
     }
