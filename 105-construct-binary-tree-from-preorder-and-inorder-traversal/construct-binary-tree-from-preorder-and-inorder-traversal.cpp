@@ -3,7 +3,6 @@ public:
     TreeNode* build(vector<int>& pre, int prelo, int prehi, vector<int>& in, int inlo, int inhi){
         if(prelo > prehi) return NULL;
         TreeNode* root = new TreeNode(pre[prelo]);
-        if(prelo==prehi) return root;
         int i = inlo;
         while(i<=prehi){
             if(in[i]==pre[prelo]) break;
