@@ -1,10 +1,9 @@
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& str) {
-        int n = str.size();
         vector<vector<string>> ans;
         unordered_map<string, vector<string>> mp;
-        for(int i=0; i<n; i++){
+        for(int i=0; i<str.size(); i++){
             string lexo = str[i];
             sort(lexo.begin(),lexo.end());
             if(mp.find(lexo)==mp.end()){
