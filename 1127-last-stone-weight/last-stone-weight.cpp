@@ -1,8 +1,9 @@
 class Solution {
 public:
     int lastStoneWeight(vector<int>& stones) {
+        int m = stones.size();
         priority_queue<int> pq;
-        for(int i=0; i<stones.size(); i++){
+        for(int i=0; i<m; i++){
             pq.push(stones[i]);
         }
         while(pq.size() > 1){
