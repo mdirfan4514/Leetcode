@@ -8,12 +8,13 @@ public:
        for(int i=0; i<n; i++){
         remaining = target-nums[i];
         if(mp.find(remaining) != mp.end()){
-            return{mp[remaining],i};
+         ans.push_back(mp[remaining]);
+         ans.push_back(i);
         }
         else{
            mp[nums[i]] = i;
           }
        }
-       return {};
+       return ans;
     }
 };
