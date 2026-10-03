@@ -2,29 +2,29 @@ class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
         int n = nums.size();
-
-       int cidx = -1;
-        for(int i =n-1; i>0; i--){
-            if(nums[i] > nums[i-1]){
-               cidx = i-1;
-               break;
+        int idx = -1;
+        for(int i=n-2;i>=0;i--){
+            if(nums[i]<nums[i+1]){
+                idx=i;
+                break;
             }
         }
-
-        if(cidx != -1){
-        int swapidx = -1;
-        for(int j=n-1; j> cidx ; j--){
-            if(nums[j] > nums[cidx]){
-                 swapidx = j;
-                 break;
-
-            }          
+        if(idx==-1){
+            reverse(nums.begin(),nums.end());
+            return;
         }
-
-        swap(nums[cidx],nums[swapidx]);
-       }
-
-       reverse(nums.begin()+ cidx+1 ,nums.end());
+        reverse(nums.begin()+idx+1,nums.end());
+        int j=-1;
+        for(int i=idx+1;i<n;i++){
+            if(nums[i]>nums[idx]){
+            j=i;
+            break;
+        }
+        }
+        int temp=nums[idx];
+        nums[idx]=nums[j];
+        nums[j]=temp;
+        return;
         
     }
 };
