@@ -14,16 +14,16 @@ public:
             return;
         }
         reverse(nums.begin()+idx+1,nums.end());
-        int j=-1;
+        int k=-1;
         for(int i=idx+1;i<n;i++){
             if(nums[i]>nums[idx]){
-            j=i;
+            k=i;
             break;
         }
         }
         int temp=nums[idx];
-        nums[idx]=nums[j];
-        nums[j]=temp;
+        nums[idx]=nums[k];
+        nums[k]=temp;
         return;
         
     }
