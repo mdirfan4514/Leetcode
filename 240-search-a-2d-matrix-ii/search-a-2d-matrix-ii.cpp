@@ -4,14 +4,18 @@ public:
         int m = matrix.size();
         int n = matrix[0].size();
         bool flag = false;
-         for(int i=0; i<m; i++){
-            for(int j=0; j<n; j++){
-                if(matrix[i][j] == target){
-                    flag = true;
-                    break;
-                } 
+        int i = 0;
+        int j = n-1;
+        while(j >= 0 && i < m){
+            if(matrix[i][j] == target){
+                flag = true;
+                break;
             }
-         }
-         return flag;
+            else if(matrix[i][j] > target){
+                j--;
+            }
+            else i++;
+        } 
+        return flag;
     }
 };
