@@ -3,12 +3,12 @@ public:
     int bestClosingTime(string cust) {
         int n = cust.size();
         vector<int> pre(n+1);
-        int pref = 0;
+        pre[0] = 0;
+        int p = 0;
         for(int i=0; i<n; i++){
-            pre[i] = pref;
-            if(cust[i] == 'N') pref++;  
+            if(cust[i] == 'N') p++;
+            pre[i+1] = p;
         }
-        pre[n] = pref;
 
         vector<int> suf(n+1);
         suf[n] = 0;
